@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Farming Hub: Contact Us</title>
+    <meta name="description" content="Get in touch with CoFarmingHub for any inquiries or collaborations. Find our contact information and location here.">
+    <meta name="keywords" content="CoFarmingHub contact, contact us, get in touch, inquiries, collaborations, WynTree Nursery">
+    <meta name="author" content="Eden Lee">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../images/logo with removed background.webp" type="image/png">
+    <!-- Additional CSS and JS files -->
+     <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <script src="https://kit.fontawesome.com/fac4bc31d1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+      .animated-item {
+          opacity: 0; /* Make elements invisible initially */
+      }
+      .contact p{
+        font-size: 1.25rem!important;
+      }
+      .contact h2{
+        font-size: 3rem!important;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #388E3C;
+      }
+      #map {
+        margin: 0rem 0;
+        margin-bottom: -0.5rem;
+      }
+    </style>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Le94_IpAAAAAJ1TanfuHauvbGfb2hVSScH7qE4o"></script>  <link rel="preload" href="../images/header-bg-copyright.webp" as="image">
+   <link rel="preload" href="../images/CoFarming hub logo.webp" as="image">
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DG4Z93GTLE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DG4Z93GTLE');
+</script>
+
+
+<body>
+  <header>
+
+    <section class="minihero">
+      <div class="background-overlay">
+        <div class="minihero-container">
+          <div class="minihero-title"> 
+          <h2>Contact Us</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  </header>
+  <main>
+    <!--action="../php/submit-contact-form.php" method="POST"-->
+    <section class="contact">
+      <div class="container">
+        <h2>Join Us!</h2>
+        <p>Be part of the movement to create a sustainable future. Whether you are an individual, a business, or a community organization, there are many ways to get involved with CoFarmingHub. Together, we can cultivate a brighter, more sustainable future for all.</p>
+        
+
+        <div>
+          <form id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="contact" name="contact" placeholder="Contact" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="form-feedback"></div>
+    </div>
+    
+
+
+      <div style="height: 30px;"></div>
+      <h2>Our Location</h2>
+      
+      
+    </section>
+        <div id="map">
+          <!-- Embed Google Maps iframe here -->
+          <iframe width="100%" height="710" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=461%20point%20cook%20Rd+(WynTree%20Nursery)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe>
+        </div>
+      </div>
+    
+  </main>
+  <script src="../js/footer.js"></script>
+
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+     (function() {
+        emailjs.init('vxnk-dr15_iVhTAm2');
+     })();
+  </script>
+
+  
+
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          grecaptcha.enterprise.ready(async () => {
+              const token = await grecaptcha.enterprise.execute('6Le94_IpAAAAAJ1TanfuHauvbGfb2hVSScH7qE4o', { action: 'submit' }); // Replace 'your_site_key' with your actual Site Key
+
+              if (!token) {
+                  const feedback = document.getElementById('form-feedback');
+                  feedback.innerHTML = '<p style="color: white; background-color: #eb2d3a; padding: 10px; border-radius: 5px;">Please complete the reCAPTCHA.</p>';
+                  return;
+              }
+
+              // Verify reCAPTCHA token on the backend
+              const response = await fetch('https://recaptchaenterprise.googleapis.com/v1/projects/cofarminghub-1717738685501/assessments?key=AIzaSyDmCEq-B7kq7cQ94FnSFAH7ZydpiMRFXaU', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      event: {
+                          token: token,
+                          siteKey: '6Le94_IpAAAAAJ1TanfuHauvbGfb2hVSScH7qE4o',
+                          expectedAction: 'submit'
+                      }
+                  })
+              });
+
+              const data = await response.json();
+
+              if (data.tokenProperties && data.tokenProperties.valid) {
+                  emailjs.sendForm('service_c3mmm8q', 'template_40svv3j', document.getElementById('contact-form'))  // Replace 'your_service_id' and 'your_template_id' with your actual IDs
+                      .then(function(response) {
+                          console.log('SUCCESS!', response.status, response.text);
+                          const feedback = document.getElementById('form-feedback');
+                          feedback.innerHTML = '<p style="color: green; background-color: #90ee90; padding: 10px; border-radius: 5px; margin-top: 1rem;">Message sent successfully! We will get back to you shortly.</p>';
+                          document.getElementById('contact-form').reset(); // Clear the form
+                      }, function(error) {
+                          console.log('FAILED...', error);
+                          const feedback = document.getElementById('form-feedback');
+                          feedback.innerHTML = '<p style="color: white; background-color: #eb2d3a; padding: 10px; border-radius: 5px; margin-top: 1rem;">Sorry, there was an error sending your message. Please try again later.</p>';
+                      });
+              } else {
+                  const feedback = document.getElementById('form-feedback');
+                  feedback.innerHTML = '<p style="color: white; background-color: #eb2d3a; padding: 10px; border-radius: 5px;">reCAPTCHA validation failed. Please try again.</p>';
+              }
+          });
+      });
+  </script>
+    
+  <script src="js/animationOnScroll"></script>
+  <script src="js/navbar.js"></script>
+  <script src="../js/subNavbar.js"></script>
+</body>
+</html>

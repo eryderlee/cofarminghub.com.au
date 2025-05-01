@@ -1,0 +1,126 @@
+.partners {
+    padding: 4rem 0;
+}
+.partner-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    
+}
+.partner-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 8px;
+    z-index: 1;
+}
+.container{
+    max-width: 100%!important;
+}
+.partner-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.partner-box img {
+    width: 150px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+}
+.partner-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    
+}
+.partner-box p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: white;
+    
+}
+.partner-box .button-container {
+    margin-top: 1rem;
+    
+}
+.partner-box h3, .partner-box p, .partner-box .button-container {
+    position: relative;
+    z-index: 2;
+}
+.partner-box .button-container a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    
+}
+.partner-box .button-container a:hover {
+    background-color: #45a049;
+}
+.other-partners {
+    margin-top: 4rem;
+}
+.other-partners h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.black-background {
+    background-color: black; /* Change background color to black */
+  }
+.partners-grid {
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+}
+.partners-grid img {
+    width: 150px; /* Set a standard width */
+    height: 100px; /* Set a standard height */
+    object-fit: contain; /* Ensure the logo fits within the specified size */
+
+}
+@media only screen and (max-width: 768px) {
+    .partner-box {
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content */
+        text-align: center; /* Center text */
+        height: auto;
+    }
+
+    .partner-box img {
+        width: 80px; /* Adjust image size for smaller screens */
+        margin-bottom: 1rem; /* Adjust margin for stacking */
+    }
+
+    .partner-box h3 {
+        font-size: 1.35rem; /* Adjust font size for smaller screens */
+    }
+
+    .partner-box p {
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+
+    .partner-box .button-container a {
+        padding: 0.5rem 0.75rem; /* Adjust padding for smaller screens */
+    }
+}

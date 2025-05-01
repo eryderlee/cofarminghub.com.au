@@ -1,0 +1,406 @@
+
+
+
+/* Title styling */
+.section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem; /* Slightly smaller font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #000000; /* Softer color */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Impactful text styling */
+.impactful-text {
+    font-family: Arial, sans-serif; /* Specify a common sans-serif font */
+    font-size: 1.5rem!important; /* Slightly smaller font size */
+    font-weight: 400; /* Normal font weight for better readability */
+    color: #313131; /* Softer dark color */
+    line-height: 1.6; /* Increased line height for readability */
+    text-align: center;
+    margin-bottom: 2rem; /* Space below paragraphs */
+    max-width: 1200px; /* Maximum width for better readability */
+    margin-left: auto; /* Center align text */
+    margin-right: auto; /* Center align text */
+    padding: 1rem 2rem; /* Add padding for a better look */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #f0f0f0; /* Subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Subtle gradient */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.impactful-text span {
+    color: #4CAF50; /* Highlighted text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.impactful-text:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: linear-gradient(135deg, #f9f9f9, #e9e9e9); /* Slightly darker gradient on hover */
+}
+
+/* Optional: Adding a subtle transition effect */
+.impactful-text span {
+    transition: color 0.3s ease;
+}
+
+.impactful-text span:hover {
+    color: #388E3C; /* Darker green on hover */
+}
+
+
+.why-us {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  .why-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .why-us-card {
+    flex: 1 1 200px;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .why-us-card:hover {
+    transform: translateY(-10px); /* Move the card up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  }
+  
+  .why-us-card p {
+    color: #313131;
+  }
+  
+  .why-us-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .why-us-text {
+    font-size: 1.5rem !important;
+    margin-top: 1rem;
+  }
+
+
+
+.minihero {
+    background: url('../images/header-bg-copyright.webp') no-repeat center center/cover;
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-top: 80px; 
+}
+.minihero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.minihero-title {
+    font-family: "Bebas Neue";
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin: 4rem;
+    padding: 0;
+}
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust overlay opacity and color as needed */
+}
+
+
+
+
+
+
+
+
+/* Photos Grid */
+.photos-grid {
+    
+    max-width:1550px;
+    width: calc(100% - 20rem); /* Adjust width to account for left margin */
+   margin-left: 10rem;
+   margin-right: auto;
+    justify-content: space-between;
+    align-items: center;
+    display: grid!important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr))!important;
+    gap: 5rem!important;
+    box-sizing: border-box; 
+    
+}
+
+.photos-grid img {
+    width: 100%!important;
+    max-height: 20rem;
+    height: auto!important;
+    border-radius: 8px!important;
+    
+}
+
+/* Team Carousel */
+.individual-team {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.individual-team:hover {
+    transform: scale(1.05); /* Slightly scale up the element on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+}
+.individual-team:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.individual-team img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+.individual-team .description {
+    align-self: center;
+    margin: auto;
+    
+    max-width: 600px;
+}
+
+.individual-team .description p {
+    margin: 0.5rem 0;
+    color: #313131;
+}
+
+.individual-team .description a {
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.individual-team .description a:hover {
+    text-decoration: underline;
+}
+
+.profile-icon-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .profile-icon-container i {
+    font-size: 24px;
+    color: #333; /* Adjust icon color as needed */
+  }
+  
+  .profile-details {
+    display: none;
+    position: absolute;
+    top: 110%; /* Adjust vertical position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px; /* Adjust width as needed */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  .profile-icon-container:hover .profile-details {
+    display: block;
+  }
+  
+.carousel-container {
+    max-width: inherit;
+    
+    overflow: hidden!important;
+    position: relative!important;
+    align-self: center;
+  }
+
+  .team-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.team-member {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin: 1rem;
+    text-align: center;
+}
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.team-carousel {
+    display: flex !important;
+    
+    
+    transition: transform 0.5s ease-in-out!important;
+}
+
+.team-member {
+    flex: 0 0 auto!important;
+    scroll-snap-align: start!important;
+    margin: 1rem!important;
+    text-align: center!important;
+    box-sizing: border-box;
+    
+}
+
+.team-member img {
+    width: 30rem!important;
+    height: 20rem!important;
+    border-radius: 0px!important;
+    
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    margin-left: -10px;
+    margin-right: -10px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    width:70px;
+    height: 320px;
+}
+
+.carousel-button.prev {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.11) 100%);    
+
+    left: 10px;
+}
+
+.carousel-button.next {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.11) 0%,  rgba(0, 0, 0, 0.7) 100%);    
+
+    right: 10px;
+}
+
+.carousel-button:focus {
+    outline: none;
+}
+
+.awards-list {
+    list-style: none;
+    padding: 0;
+}
+
+.awards-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.award-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e6e6e6;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.award-item span {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.award-image {
+    width: 300px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}/* Small devices (tablets and large phones, 768px and up) */
+@media only screen and (max-width: 800px) {
+    .carousel-container{
+        max-width: inherit;
+        margin-left: 0rem;
+    }
+    .photos-grid {
+        width: 100%;
+        padding-left: 1rem; /* Remove left padding on mobile */
+        padding-right: 1rem; /* Ensure no right padding on mobile */
+        margin: 0 auto; /* Center the container horizontally */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+        gap: 1rem !important;
+        align-items: center;
+    }
+
+    .photos-grid img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

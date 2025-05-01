@@ -1,0 +1,154 @@
+/* Reset some default styles for consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic body styles with flexible layout */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header styles */
+header {
+  background-color: #006400; /* dark green */
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Navigation links styling */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s, text-decoration 0.3s;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Sections styling */
+section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Headings in sections */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #006400;
+}
+
+/* Additional h3 styles inside sections */
+section h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #006400;
+}
+
+/* List styles */
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer styles */
+footer {
+  background-color: #006400;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* Adjust padding in header for smaller screens */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Scale down headings for smaller screens */
+  section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  /* Stack header elements vertically */
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

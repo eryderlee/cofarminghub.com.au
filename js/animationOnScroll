@@ -1,0 +1,29 @@
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const buffer = 100; // Buffer in pixels
+    return (
+        rect.top >= -buffer &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + buffer
+    );
+}
+
+// Add the animation class when the element is in the viewport
+function addAnimationOnScroll() {
+    const elements = document.querySelectorAll('.animated-item');
+
+    for (const element of elements) {
+        if (isInViewport(element) && !element.classList.contains('animated')) {
+            const animationName = element.getAttribute('data-animation');
+            element.classList.add('animated'); // Add 'animated' class to avoid re-triggering
+            element.classList.add(animationName);
+            element.style.opacity = 1; // Make element visible
+        }
+    }
+}
+
+// Listen for scroll and resize events
+window.addEventListener('scroll', addAnimationOnScroll);
+window.addEventListener('resize', addAnimationOnScroll);
+
+// Check on initial load
+document.addEventListener('DOMContentLoaded', addAnimationOnScroll);
