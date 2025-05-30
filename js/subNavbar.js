@@ -1,12 +1,38 @@
 function createNavBar() {
     const navBarHTML = `
-        <header>
-            <div >
-                <div class="container">
-                        <div class="logo">
-                            <img src="../images/CoFarming hub logo.webp" alt="Co-Farming Hub Logo">
+    <header>
+        <div>
+            <div class="container">
+                <div class="logo">
+                    <img src="../images/CoFarming hub logo.webp" alt="Co-Farming Hub Logo">
+                </div>
+                    <div class="dark-mode-switch">
+                    <label class="switch" for="darkModeToggle">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <div class="sunmoon">
+                            <div class="darkside"></div>
                         </div>
-                        <div class="dark-mode-switch">
+                        <div class="border"></div>
+                        <div class="clouds">
+                            <img src="../images/cloud_1.svg" alt="" class="cloud cloud-1" />
+                            <img src="../images/cloud_2.svg" alt="" class="cloud cloud-2" />
+                            <img src="../images/cloud_3.svg" alt="" class="cloud cloud-3" />
+                            <img src="../images/cloud_4.svg" alt="" class="cloud cloud-4" />
+                            <img src="../images/stars.svg" alt="" class="stars" />
+                        </div>
+                    </label>
+                 </div>
+                <button id="nav-open" aria-label="Open menu">
+                    <i class="fa-solid fa-bars" style="color: #1fac0f;"></i>
+                </button>
+                
+                <nav id="nav" class="collapsed">
+
+                <div class="nav-header">
+                    <button id="nav-close" aria-label="Close menu">
+                        <i class="fa-solid fa-x" style="color:rgb(172, 15, 15);"></i>
+                    </button>
+                    <div class="dark-mode-switch-mobile">
                         <label class="switch" for="darkModeToggle">
                             <input type="checkbox" id="darkModeToggle" />
                             <div class="sunmoon">
@@ -21,51 +47,53 @@ function createNavBar() {
                                 <img src="../images/stars.svg" alt="" class="stars" />
                             </div>
                         </label>
-                     </div>
-                        <nav>
-                            <button id="nav-toggle" aria-label="Toggle navigation">
-                                <i class="fa-solid fa-plus icon" style="color: #1fac0f;"></i>
-                            </button>
-                            <ul id="nav-menu" class="expanded">
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="partners.html">Partners</a></li>
-                                <li><a href="news.html">News & Events</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </nav>
+                    </div>
                 </div>
+                    <ul id="nav-menu" class="expanded">
+                        
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        
+                           
+                        
+                 </ul>   
+                </nav>
             </div>
-        </header>
-    `;
+        </div>
+    </header>
+    <div id="nav-overlay" class="hidden"></div>
+`;
     
-    document.body.insertAdjacentHTML('afterbegin', navBarHTML);
-    
-    // Add event listeners for the toggle functionality
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const icon = navToggle.querySelector('.icon');
+document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 
-    navToggle.addEventListener('click', function() {
-        if (navMenu.classList.contains('expanded')) {
-            navMenu.classList.remove('expanded');
-            navMenu.classList.add('collapsed');
-            icon.classList.remove('fa-plus');
-            icon.classList.add('fa-x');
-            icon.classList.add('spin');
-            icon.style.color = '#ff6666'; // Change the color when the menu is expanded
-        } else {
-            navMenu.classList.remove('collapsed');
-            navMenu.classList.add('expanded');
-            icon.classList.remove('fa-x');
-            icon.classList.add('fa-plus');
-            icon.classList.add('reverse-spin');
-            icon.style.color = '#1fac0f'; // Change the color back when the menu is collapsed
-        }
-    });
-    
+const nav      = document.getElementById('nav');
+const openBtn  = document.getElementById('nav-open');
+const closeBtn = document.getElementById('nav-close');
+const overlay  = document.getElementById('nav-overlay');
+
+function openNav() {
+  nav.classList.replace('collapsed', 'expanded');
+  overlay.classList.add('active');
+  overlay.classList.remove('hidden');
+}
+
+function closeNav() {
+  nav.classList.replace('expanded', 'collapsed');
+  overlay.classList.remove('active');
+  // keep it in the DOM so we can re-activate later
+}
+
+openBtn.addEventListener('click', openNav);
+closeBtn.addEventListener('click', closeNav);
+
+// also close if you click the dimmed area
+overlay.addEventListener('click', closeNav);
+
     const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 // Ensure dark mode is disabled initially if not set in local storage
