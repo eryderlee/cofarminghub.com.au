@@ -1,5 +1,15 @@
+/* fix the button apearring */
+.cover{
+    display:none;
+}
+@media only screen and (max-width: 1200px) {
+
+.cover{
+    display:contents;
+}
 
 
+}
 
 /* Title styling */
 .section-title {
@@ -358,6 +368,96 @@
     width: 300px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px;
+}
+/* Road Map horizontal timeline */
+.roadmap {
+  padding: 3rem 0;
+  background: #fff;
+}
+.roadmap h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Timeline container */
+.roadmap .timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+.roadmap .timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: #e0e0e0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Each event */
+.roadmap .timeline-event {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+}
+.roadmap .event-marker {
+  width: 16px;
+  height: 16px;
+  background: #000000;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: -1px; /* center on the line */
+}
+.roadmap .event-content {
+  margin-top: 0.75rem;
+}
+.roadmap .event-date {
+  font-weight: 700;
+  color: #3a9d23;
+  margin-bottom: 0.25rem;
+}
+.roadmap .event-title {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 600px) {
+  .roadmap .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .roadmap .timeline::before {
+    top: auto;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 2rem);
+    transform: translateX(-50%);
+  }
+  .roadmap .timeline-event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  .roadmap .event-marker {
+    top: 0;
+    margin-right: 1rem;
+  }
+  .roadmap .event-content {
+    margin-top: 0;
+  }
 }
 
 /* About Section */

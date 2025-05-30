@@ -1,0 +1,41 @@
+/* Franchise form – question label */
+#franchise-form .form-group label[for="ndis_participant"],
+#franchise-form .form-group > label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #f3e9e9;
+}
+
+#franchise-form .radio-group {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Make the question label span full width and center text */
+#franchise-form .form-group > label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  color: #e4e4e4;
+  margin-bottom: 0.5rem;
+} 
+
+
+/* Radio input styling */
+#franchise-form .radio-group input[type="radio"] {
+  margin: 0 0.5rem 0 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: #3a9d23;  /* your brand green */
+}
+
+/* Hover/focus states */
+#franchise-form .radio-group input[type="radio"]:focus + span, 
+#franchise-form .radio-group label:hover {
+  color: #3a9d23;
+}

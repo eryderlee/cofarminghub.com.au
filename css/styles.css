@@ -60,6 +60,15 @@ display: none;
   height: auto; /* Maintain aspect ratio */
   
 }
+.cover{
+    display:none;
+}
+@media only screen and (max-width: 1200px) {
+
+.cover{
+    display:contents;
+}
+}
 
 nav {
 position: fixed; 
@@ -291,11 +300,11 @@ animation: zoomIn 10s forwards;
 }
 
 .hero-container h2{
-font-size: 61px;
+font-size: 55px;
 font-weight: 700;
-line-height: 1.2em;
+line-height: 2rem;
 text-align: center;
-max-width: 51.8125rem
+max-width: 55.8125rem
 }
 .hero-container p{
 font-weight: 300;
@@ -322,10 +331,62 @@ display: inline-block;
 transform: translateY(100%);
 opacity: 0;
 animation: slideUp 0.5s forwards;
+
 }
 
 .animated-text span.space {
 width: 0.2em;
+}
+
+/* put these in your stylesheet, after your existing animated-text rules */
+.animated-text span.yellow {
+  color: rgb(255, 255, 255) !important;
+}
+.animated-text span.green {
+  color: rgb(255, 255, 255) !important;
+}
+/* Hero CTA button */
+.hero-cta .btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-cta .btn-primary {
+  background-color: #FFD700;    /* gold/yellow */
+  color: #1a1a1a;               /* dark text for contrast */
+}
+
+.hero-cta .btn-primary:hover {
+  background-color: #FFC107;    /* slightly darker */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+.CTA-button{
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #FFD700;    /* gold/yellow */
+  color: #1a1a1a;               /* dark text for contrast */
+}
+.CTA-button:hover {
+  background-color: #FFC107;    /* slightly darker */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 @keyframes slideUp {
@@ -387,7 +448,7 @@ animation: bounce 2s infinite;
     opacity: 1;
 }
 }
-.about, .services, .projects, .contact {
+.about, .services, .projects, .contact, .how-it-works {
 position: relative;
 z-index: 2;
   padding: 2rem 0;
@@ -668,10 +729,10 @@ font-weight: bold;
 }
 .highlight-light-green {
 color:  #4CAF50;
-
-
 }
-
+.highlight-light-yellow {
+color:  #cfb103;
+}
 .about-details {
 display: flex;
 flex-wrap: wrap;
@@ -756,6 +817,109 @@ background-color: #45a049;
 transform: translateY(-3px);
 }
 
+/* how it works section */
+/* How It Works section wrapper */
+.how-it-works {
+  padding: 4rem 0;              /* vertical spacing */
+  background-color: #ffffff;    /* white background */
+}
+
+/* Section heading */
+.how-it-works h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+/* Grid container for the four steps */
+.how-it-works .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Individual step card */
+.how-it-works .step-card {
+  position: relative;            /* enable arrow positioning */
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #f9f9f9;     /* light gray card */
+  border-radius: 0.5rem;         /* rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.how-it-works .step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Big, colored step number */
+.how-it-works .step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3a9d23;                /* brand green */
+  margin-bottom: 0.5rem;
+}
+
+/* Step title */
+.how-it-works .step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222222;
+}
+
+/* Arrows between step cards */
+.how-it-works .step-card:not(:last-child)::after {
+  content: "➔";
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #20b69d;
+  pointer-events: none;
+}
+
+/* Responsive tweak: single column on small screens */
+@media (max-width: 768px) {
+  .how-it-works .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-it-works .step-card:not(:last-child)::after {
+    content: "⬇";
+    top: auto;
+    bottom: -1rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+/* Make CTA span entire grid and center it */
+.how-it-works .steps-grid .cta {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Style your CTA button */
+.how-it-works .CTA-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  
+ 
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: opacity .2s;
+}
+
+.how-it-works .CTA-button:hover {
+  opacity: 0.85;
+}
 /* Values Section */
 .values{
 position: relative;
@@ -824,10 +988,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 transform: scale(1.05); /* Slightly scale the element */
 }
 
-
 .value-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;    /* or flex-start if you want left-aligned titles */
+  gap: 0.5rem;                /* space between icon and text */
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.75rem;     /* adjust as needed */
+}
+
+.value-icon {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  /* remove previous margin-bottom if any */
 }
 
 .value-item p {

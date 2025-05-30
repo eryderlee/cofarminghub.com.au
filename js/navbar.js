@@ -64,9 +64,6 @@ function createNavBar() {
                             <li><a href="pages/news.html">News & Events</a></li>
                             <li><a href="pages/contact.html">Contact Us</a></li>
 
-                            <li class="highlighted-switch">
-                               
-                            </li>
                      </ul>   
                     </nav>
                 </div>

@@ -1,3 +1,13 @@
+.cover{
+    display:none;
+}
+@media only screen and (max-width: 1200px) {
+
+.cover{
+    display:contents;
+}
+}
+
 .partners {
     padding: 4rem 0;
 }

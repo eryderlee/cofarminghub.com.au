@@ -3,9 +3,11 @@ function createNavBar() {
     <header>
         <div>
             <div class="container">
+
                 <div class="logo">
                     <img src="../images/CoFarming hub logo.webp" alt="Co-Farming Hub Logo">
                 </div>
+                
                     <div class="dark-mode-switch">
                     <label class="switch" for="darkModeToggle">
                         <input type="checkbox" id="darkModeToggle" />
@@ -22,16 +24,17 @@ function createNavBar() {
                         </div>
                     </label>
                  </div>
-                <button id="nav-open" aria-label="Open menu">
-                    <i class="fa-solid fa-bars" style="color: #1fac0f;"></i>
-                </button>
-                
-                <nav id="nav" class="collapsed">
-
-                <div class="nav-header">
-                    <button id="nav-close" aria-label="Close menu">
-                        <i class="fa-solid fa-x" style="color:rgb(172, 15, 15);"></i>
+                 <div class="cover">
+                    <button id="nav-open" aria-label="Open menu">
+                        <i class="fa-solid fa-bars" style="color: #1fac0f;"></i>
                     </button>
+                </div>
+                    <nav id="nav" class="collapsed">
+                        <div class="nav-header">
+                            <button id="nav-close" aria-label="Close menu">
+                                <i class="fa-solid fa-x" style="color:rgb(172, 15, 15);"></i>
+                            
+                            </button>
                     <div class="dark-mode-switch-mobile">
                         <label class="switch" for="darkModeToggle">
                             <input type="checkbox" id="darkModeToggle" />
@@ -69,83 +72,82 @@ function createNavBar() {
     <div id="nav-overlay" class="hidden"></div>
 `;
     
-document.body.insertAdjacentHTML('afterbegin', navBarHTML);
+  document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 
-const nav      = document.getElementById('nav');
-const openBtn  = document.getElementById('nav-open');
-const closeBtn = document.getElementById('nav-close');
-const overlay  = document.getElementById('nav-overlay');
-
-function openNav() {
-  nav.classList.replace('collapsed', 'expanded');
-  overlay.classList.add('active');
-  overlay.classList.remove('hidden');
-}
-
-function closeNav() {
-  nav.classList.replace('expanded', 'collapsed');
-  overlay.classList.remove('active');
-  // keep it in the DOM so we can re-activate later
-}
-
-openBtn.addEventListener('click', openNav);
-closeBtn.addEventListener('click', closeNav);
-
-// also close if you click the dimmed area
-overlay.addEventListener('click', closeNav);
+    const nav      = document.getElementById('nav');
+    const openBtn  = document.getElementById('nav-open');
+    const closeBtn = document.getElementById('nav-close');
+    const overlay  = document.getElementById('nav-overlay');
+  
+    function openNav() {
+      nav.classList.replace('collapsed', 'expanded');
+      overlay.classList.add('active');
+      overlay.classList.remove('hidden');
+    }
+  
+    function closeNav() {
+      nav.classList.replace('expanded', 'collapsed');
+      overlay.classList.remove('active');
+      // keep it in the DOM so we can re-activate later
+    }
+  
+    openBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+  
+    // also close if you click the dimmed area
+    overlay.addEventListener('click', closeNav);
+  
 
     const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-// Ensure dark mode is disabled initially if not set in local storage
-if (localStorage.getItem('darkMode') === null) {
-    localStorage.setItem('darkMode', 'disabled');
-} 
-// Check local storage for dark mode state and apply it
-if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark');
-    body.classList.toggle('dark-mode');
-    darkModeToggle.checked = true; // If you're using a checkbox for toggle
-}
-
-// Function to enable dark mode
-const enableDarkMode = () => {
-    body.classList.add('dark');
-    
-    localStorage.setItem('darkMode', 'enabled');
-};
-
-// Function to disable dark mode
-const disableDarkMode = () => {
-    body.classList.remove('dark');
-    
-    localStorage.setItem('darkMode', 'disabled');
-};
-
-// Event listener for the toggle
-darkModeToggle.addEventListener('change', () => {
-    if (darkModeToggle.checked) {
-        // Turn dark mode on:
-        // First add the class that triggers the left shift (e.g. "dark")
-        body.classList.add('dark');
-        // Then, in the next frame, add the second class that applies the dark mode styles
-        requestAnimationFrame(() => {
-            body.classList.add('dark-mode');
-            document.documentElement.style.backgroundColor = "#3e3f41";
-        });
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        // Turn dark mode off:
-        // First remove the dark mode styles so that the sun/moon can animate back
-        body.classList.remove('dark-mode');
-        // Then, in the next frame, remove the "dark" class which controls the position
-        requestAnimationFrame(() => {
-            body.classList.remove('dark');
-            document.documentElement.style.backgroundColor = "#ffffff";
-        });
+    const body = document.body;
+    // Ensure dark mode is disabled initially if not set in local storage
+    if (localStorage.getItem('darkMode') === null) {
         localStorage.setItem('darkMode', 'disabled');
+    } 
+    // Check local storage for dark mode state and apply it
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark');
+        body.classList.toggle('dark-mode');
+        darkModeToggle.checked = true; // If you're using a checkbox for toggle
     }
-});
+    
+    // Function to enable dark mode
+    const enableDarkMode = () => {
+        body.classList.add('dark');
+        
+        localStorage.setItem('darkMode', 'enabled');
+    };
+    
+    // Function to disable dark mode
+    const disableDarkMode = () => {
+        body.classList.remove('dark');
+        
+        localStorage.setItem('darkMode', 'disabled');
+    };
+    
+    // Event listener for the toggle
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            body.classList.add('dark');
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            body.classList.remove('dark');
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+    
 
+    // Listen for the end of the animation and reset the classes
+    icon.addEventListener('animationend', function() {
+        if (icon.classList.contains('spin')) {
+            icon.classList.remove('spin');
+        }
+        if (icon.classList.contains('reverse-spin')) {
+            icon.classList.remove('reverse-spin');
+        }
+    });
 }
 
 
